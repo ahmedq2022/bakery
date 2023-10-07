@@ -1,0 +1,268 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(192, 13, 13);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 500px;
+    width: 500px;
+    background-color: rgba(192, 13, 13, 0.295);
+    border-radius: 50%;
+    position: fixed;
+    filter:blur(40px);
+    z-index: 9;
+}
+#nav{
+    height: 150px;
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    gap: 50px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 99;
+
+}
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+}
+#nav h4:hover{
+    color: rgb(202, 13, 13);
+}
+
+
+
+a {
+    text-decoration: none;
+  }
+
+
+
+
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10; 
+}
+#page1 h1{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 90px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "Welcome To Bake My Day";
+    position: absolute;
+    color: black;
+    top: -3px;
+    left: -3px;
+    -webkit-text-stroke: 2px rgb(255, 47, 47);
+    z-index: -1;
+
+}
+
+#page1 h2{
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#img{
+    size: 100px;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    /*background-color: red;*/
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 80px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    transition: all liner 0.7s;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(255, 47, 47);
+}
+#scroller h4:hover{
+    color: rgb(255, 47, 47);
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#our-story{
+    height: 40vh;
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+#our-story img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#our-story-in{
+    width: 40%;
+    text-align: center;
+}
+#our-story-in h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+#our-story-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+
+
+
+
+
+
+.header .icons div{
+    font-size: 1.5rem;
+    margin-left: 0.6rem;
+    cursor: pointer;
+    color: #fff;
+
+}
+
+.header .icons div:hover{
+color:rgb(202, 13, 13);
+}
+
+#menu-btn{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Styles for the mobile navigation menu when active */
+    .header .nav {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: var(--brown);
+        border-top: 0.1rem solid rgba(192, 13, 13, 0.295);
+        border-bottom: 0.1rem solid rgba(192, 13, 13, 0.295);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    /* Styles for navigation links in the mobile menu */
+    .header .nav a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: var(--brown);
+        font-size: 2rem;
+        display: block;
+        border-radius: .5rem;
+    }
+
+    /* Styles for the mobile navigation menu when it's active */
+    .nav.active {
+        display: block;
+        background-color: black;
+        /* Add any other styles as needed */
+    }
+
+    /* Styles for navigation links in the mobile menu when it's active */
+    .nav.active a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: var(--brown);
+        font-size: 2rem;
+        display: block;
+        border-radius: .5rem;
+        /* Add any other styles as needed */
+    }
+}
